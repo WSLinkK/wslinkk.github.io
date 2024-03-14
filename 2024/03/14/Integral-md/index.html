@@ -249,7 +249,7 @@
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/basic-density-fitting-integral/">basic, density fitting, integral</a>
+                                <a href="/categories/Basic/">Basic</a>
                             
                         </span>
                     
@@ -262,20 +262,17 @@
 <li><code>df_hf_int</code>: Directory where the three-center two-electron integrals are saved.</li>
 <li><code>V_0.h5</code>: HDF5 file containing the three-center two-electron intagrals.</li>
 </ul>
-<h2 id="Integrals-Definition"><a href="#Integrals-Definition" class="headerlink" title="Integrals Definition"></a>Integrals Definition</h2><h3 id="Chemist’s-Notation"><a href="#Chemist’s-Notation" class="headerlink" title="Chemist’s Notation"></a>Chemist’s Notation</h3><p>In <strong>chemist’s notation</strong>, the integral is represented as:</p>
-<p>$$<br>\begin{equation}<br>(ij\vert kl) &#x3D; U_{ijkl} &#x3D; \int\int dr_1 dr_2 \phi^*<em>i(r_1)\phi_j(r_1)\frac{1}{\vert r_1-r_2\vert}\phi^*<em>k(r_2)\phi_l(r_2) &#x3D; \sum</em>{Q} V</em>{ij}(Q)V_{kl}(Q)<br>\end{equation}<br>$$</p>
+<h2 id="Integrals-Definition"><a href="#Integrals-Definition" class="headerlink" title="Integrals Definition"></a>Integrals Definition</h2><h3 id="Chemist’s-Notation"><a href="#Chemist’s-Notation" class="headerlink" title="Chemist’s Notation"></a>Chemist’s Notation</h3><p>In <strong>chemist’s notation</strong>, the integral is represented as:<br>$\begin{equation}<br>(ij\vert kl) &#x3D; U_{ijkl} &#x3D; \int\int dr_1 dr_2 \phi^*<em>i(r_1)\phi_j(r_1)\frac{1}{\vert r_1-r_2\vert}\phi^*<em>k(r_2)\phi_l(r_2) &#x3D; \sum</em>{Q} V</em>{ij}(Q)V_{kl}(Q)<br>\end{equation}$</p>
 <ul>
 <li><strong>Function</strong>: <code>chem_four_center_integral</code> computes this integral.</li>
 <li>Used for scGW</li>
 </ul>
-<h3 id="Physicist’s-Notation"><a href="#Physicist’s-Notation" class="headerlink" title="Physicist’s Notation"></a>Physicist’s Notation</h3><p>In <strong>physicist’s notation</strong>, the integral is defined as:</p>
-<p>$$<br>\begin{equation}<br>\langle ij\vert kl\rangle &#x3D; V_{ijkl} &#x3D; \int\int dr_1 dr_2 \phi^*<em>i(r_1)\phi_j^*(r_2)\frac{1}{\vert r_1-r_2\vert}\phi_k(r_2)\phi_l(r_1) &#x3D; \sum</em>{Q} V_{il}(Q)V_{jk}(Q)<br>\end{equation}<br>$$</p>
+<h3 id="Physicist’s-Notation"><a href="#Physicist’s-Notation" class="headerlink" title="Physicist’s Notation"></a>Physicist’s Notation</h3><p>In <strong>physicist’s notation</strong>, the integral is defined as:<br>$\begin{equation}<br>\langle ij\vert kl\rangle &#x3D; V_{ijkl} &#x3D; \int\int dr_1 dr_2 \phi^*<em>i(r_1)\phi_j^*(r_2)\frac{1}{\vert r_1-r_2\vert}\phi_k(r_2)\phi_l(r_1) &#x3D; \sum</em>{Q} V_{il}(Q)V_{jk}(Q)<br>\end{equation}$</p>
 <ul>
 <li><strong>Function</strong>: <code>phys_four_center_integral</code> computes this integral.</li>
 <li>Used for GF2</li>
 </ul>
-<h3 id="Simplification-through-Density-Fitting"><a href="#Simplification-through-Density-Fitting" class="headerlink" title="Simplification through Density Fitting"></a>Simplification through Density Fitting</h3><p>The expression for $U_{ijkl}&#x3D;\sum_{Q} V_{ij}(Q)V_{kl}(Q)$ and $V_{ijkl}&#x3D;\sum_{Q} V_{il}(Q)V_{jk}(Q)$ suggests a simplification technique known as density fitting or resolution of the identity (RI), where the complex four-center integrals are approximated using a sum over simpler terms involving fewer centers. This approach significantly reduces computational cost.</p>
-<p>$$<br>\begin{equation}<br>V_{ij}(Q) &#x3D; (ij\vert Q) &#x3D; \int \int dr_1dr_2 \phi_i(r_1) \phi_j(r_1) \frac{1}{\vert r_1-r_2\vert}\chi_{Q}(r_2)<br>\end{equation}<br>$$</p>
+<h3 id="Simplification-through-Density-Fitting"><a href="#Simplification-through-Density-Fitting" class="headerlink" title="Simplification through Density Fitting"></a>Simplification through Density Fitting</h3><p>The expression for $U_{ijkl}&#x3D;\sum_{Q} V_{ij}(Q)V_{kl}(Q)$ and $V_{ijkl}&#x3D;\sum_{Q} V_{il}(Q)V_{jk}(Q)$ suggests a simplification technique known as density fitting or resolution of the identity (RI), where the complex four-center integrals are approximated using a sum over simpler terms involving fewer centers. This approach significantly reduces computational cost.<br>$\begin{equation}<br>V_{ij}(Q) &#x3D; (ij\vert Q) &#x3D; \int \int dr_1dr_2 \phi_i(r_1) \phi_j(r_1) \frac{1}{\vert r_1-r_2\vert}\chi_{Q}(r_2)<br>\end{equation}$</p>
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Read the integrals from <code>df_hf_int</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V_Qij = read_integrals(path_to_df)</span><br></pre></td></tr></table></figure>
 <p>Compute the coulomb integral in chemist’s notation, $U_{ijkl}$</p>
@@ -309,7 +306,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Integral/"># Integral</a>
+                        <a href="/tags/density-fitting-integral/"># density fitting, integral</a>
                     
                         
                 </span>
