@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Munkhorgil Wang | Hexo</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Munkhorgil Wang | Hexo">
+  <title>Two Electron Coulomb Integral | Hexo</title>
+  <meta name="keywords" content=" density fitting ">
+  <meta name="description" content="Two Electron Coulomb Integral | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Education">
 <meta property="og:type" content="website">
@@ -293,19 +293,36 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="about-" class="article article-type-about" itemscope itemprop="blogPost">
+        <article id="post-Integral" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Munkhorgil Wang</h1>
+        <h1 class="article-title">Two Electron Coulomb Integral</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Basic">Basic</a> > 
+            
+            <a  data-rel="Basic&lt;---&gt;Integral">Integral</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color1">density fitting</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-03-14 00:21:56'>2024-03-14 09:09</time>
+            Created At : <time class="date" title='Updated At: 2024-03-18 23:08:18'>2024-03-14 12:00</time>
         
     </div>
     <div class="article-meta">
@@ -327,7 +344,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Education"><span class="toc-text">Education</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Four-Center-Two-Electron-Coulomb-Integral"><span class="toc-text">Four-Center Two-Electron Coulomb Integral</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Directory-Structure"><span class="toc-text">Directory Structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Integrals-Definition"><span class="toc-text">Integrals Definition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Chemist%E2%80%99s-Notation"><span class="toc-text">Chemist’s Notation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Physicist%E2%80%99s-Notation"><span class="toc-text">Physicist’s Notation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Simplification-through-Density-Fitting"><span class="toc-text">Simplification through Density Fitting</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage"><span class="toc-text">Usage</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -343,7 +360,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Education"><a href="#Education" class="headerlink" title="Education"></a>Education</h3><hr>
+        <h3 id="Four-Center-Two-Electron-Coulomb-Integral"><a href="#Four-Center-Two-Electron-Coulomb-Integral" class="headerlink" title="Four-Center Two-Electron Coulomb Integral"></a>Four-Center Two-Electron Coulomb Integral</h3><h2 id="Directory-Structure"><a href="#Directory-Structure" class="headerlink" title="Directory Structure"></a>Directory Structure</h2><ul>
+<li><code>df_hf_int</code>: Directory where the three-center two-electron integrals are saved.</li>
+<li><code>V_0.h5</code>: HDF5 file containing the three-center two-electron intagrals.</li>
+</ul>
+<h2 id="Integrals-Definition"><a href="#Integrals-Definition" class="headerlink" title="Integrals Definition"></a>Integrals Definition</h2><h3 id="Chemist’s-Notation"><a href="#Chemist’s-Notation" class="headerlink" title="Chemist’s Notation"></a>Chemist’s Notation</h3><p>In <strong>chemist’s notation</strong>, the integral is represented as<br>$$<br>\begin{equation}<br>U_{ijkl} &#x3D; (ij\vert kl) &#x3D; \int\int dr_1 dr_2 \phi^*_i(r_1)\phi_j(r_1)\frac{1}{\vert r_1-r_2\vert}\phi^*_k(r_2)\phi_l(r_2)<br>\end{equation}<br>$$</p>
+<ul>
+<li><strong>Function</strong>: <code>chem_four_center_integral</code> computes this integral.</li>
+<li>Used for scGW</li>
+</ul>
+<h3 id="Physicist’s-Notation"><a href="#Physicist’s-Notation" class="headerlink" title="Physicist’s Notation"></a>Physicist’s Notation</h3><p>In <strong>physicist’s notation</strong>, the integral is defined as<br>$$<br>\begin{equation}<br>V_{ijkl} &#x3D; \langle ij\vert kl\rangle &#x3D;  \int\int dr_1 dr_2 \phi^*_i(r_1)\phi_j^*(r_2)\frac{1}{\vert r_1-r_2\vert}\phi_k(r_2)\phi_l(r_1)<br>\end{equation}<br>$$</p>
+<ul>
+<li><strong>Function</strong>: <code>phys_four_center_integral</code> computes this integral.</li>
+<li>Used for GF2</li>
+</ul>
+<h3 id="Simplification-through-Density-Fitting"><a href="#Simplification-through-Density-Fitting" class="headerlink" title="Simplification through Density Fitting"></a>Simplification through Density Fitting</h3><p>The expression for $U_{ijkl}&#x3D;\sum_{Q} V_{ij}(Q)V_{kl}(Q)$ and $V_{ijkl}&#x3D;\sum_{Q} V_{il}(Q)V_{jk}(Q)$ suggests a simplification technique known as density fitting or resolution of the identity (RI), where the complex four-center integrals are approximated using a sum over simpler terms involving fewer centers. This approach significantly reduces computational cost.<br>$$<br>\begin{equation}<br>V_{ij}(Q) &#x3D; (ij\vert Q) &#x3D; \int \int dr_1dr_2 \phi_i(r_1) \phi_j(r_1) \frac{1}{\vert r_1-r_2\vert}\chi_{Q}(r_2)<br>\end{equation}<br>$$</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Read the integrals from <code>df_hf_int</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V_Qij = read_integrals(path_to_df)</span><br></pre></td></tr></table></figure>
+
+<p>Compute the coulomb integral in chemist’s notation, $U_{ijkl}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U_ijkl = chem_four_center_integral(V_Qij)</span><br></pre></td></tr></table></figure>
+
+<p>Compute the coulomb in physicist’s notation, $V_{ijkl}$</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V_ijkl = phys_four_center_integral(V_Qij)</span><br></pre></td></tr></table></figure>
 
       
        
@@ -356,6 +395,46 @@
 
 
 
+    
+        <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<input type="hidden" id="MathJax-js"
+        value="//cdn.jsdelivr.net/npm/mathjax@2.7.8/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+</input>
     
 
 
