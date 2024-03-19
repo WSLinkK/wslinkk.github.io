@@ -23,7 +23,7 @@
 
 <link href="/css/style.css?v=1.1.0" rel="stylesheet">
 
-<link href="/css/hl_theme/atom-one-light.css?v=1.1.0" rel="stylesheet">
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
 
 <link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
 
@@ -83,7 +83,7 @@
     
         
             <a title="linkedin"
-               href="https://www.linkedin.com/in/munkhw/"
+               href="https://www.linkedin.com/in/munkhw"
                target="_blank">
                 
                     <svg class="iconfont-svg" aria-hidden="true">
@@ -322,7 +322,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-03-18 23:08:18'>2024-03-14 12:00</time>
+            Created At : <time class="date" title='Updated At: 2024-03-18 23:14:50'>2024-03-14 12:00</time>
         
     </div>
     <div class="article-meta">
@@ -376,13 +376,14 @@
 </ul>
 <h3 id="Simplification-through-Density-Fitting"><a href="#Simplification-through-Density-Fitting" class="headerlink" title="Simplification through Density Fitting"></a>Simplification through Density Fitting</h3><p>The expression for $U_{ijkl}&#x3D;\sum_{Q} V_{ij}(Q)V_{kl}(Q)$ and $V_{ijkl}&#x3D;\sum_{Q} V_{il}(Q)V_{jk}(Q)$ suggests a simplification technique known as density fitting or resolution of the identity (RI), where the complex four-center integrals are approximated using a sum over simpler terms involving fewer centers. This approach significantly reduces computational cost.<br>$$<br>\begin{equation}<br>V_{ij}(Q) &#x3D; (ij\vert Q) &#x3D; \int \int dr_1dr_2 \phi_i(r_1) \phi_j(r_1) \frac{1}{\vert r_1-r_2\vert}\chi_{Q}(r_2)<br>\end{equation}<br>$$</p>
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>Read the integrals from <code>df_hf_int</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V_Qij = read_integrals(path_to_df)</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">V_Qij = read_integrals(path_to_df)
+</code></pre>
 <p>Compute the coulomb integral in chemist’s notation, $U_{ijkl}$</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U_ijkl = chem_four_center_integral(V_Qij)</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">U_ijkl = chem_four_center_integral(V_Qij)
+</code></pre>
 <p>Compute the coulomb in physicist’s notation, $V_{ijkl}$</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">V_ijkl = phys_four_center_integral(V_Qij)</span><br></pre></td></tr></table></figure>
+<pre><code class="python">V_ijkl = phys_four_center_integral(V_Qij)
+</code></pre>
 
       
        
@@ -531,7 +532,7 @@
         border-right: 1px solid #C3CCD0;
         text-align: right;
         color: #AAA;
-        background-color: ;
+        background-color: #fafafa;
     }
     .pre-numbering.widther {
         width: 35px;
