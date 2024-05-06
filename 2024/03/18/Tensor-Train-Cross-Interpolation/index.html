@@ -101,7 +101,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(3)</small>
+                <small>(4)</small>
             
         </div>
     </li>
@@ -113,7 +113,7 @@
         <div data-rel="Basic">
             <i class="fold iconfont icon-right"></i>
             Basic
-            <small>(2)</small>
+            <small>(3)</small>
         </div>
         
             <ul class="sub hide">
@@ -134,6 +134,17 @@
         <div data-rel="Basic&lt;---&gt;Integral">
             
             Integral
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="Basic&lt;---&gt;Quasiparticle">
+            
+            Quasiparticle
             <small>(1)</small>
         </div>
         
@@ -170,6 +181,10 @@
             
         
     
+        
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -187,7 +202,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="3">
+<input type="hidden" id="yelog_site_posts_number" value="4">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -245,6 +260,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="All Basic Quasiparticle "
+           href="/2024/03/25/Quasiparticle/"
+           data-tag="Green&#39;s Function"
+           data-author="" >
+            <span class="post-title" title="Quasiparticle">Quasiparticle</span>
+            <span class="post-date" title="2024-03-25 17:29:43">2024/03/25</span>
+        </a>
         
         
         <a  class="All Tensor Train "
@@ -311,7 +335,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2024-03-18 22:24:51'>2024-03-18 21:56</time>
+            Created At : <time class="date" title='Updated At: 2024-03-21 15:49:40'>2024-03-18 21:56</time>
         
     </div>
     <div class="article-meta">
@@ -333,7 +357,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Matrix-Cross-Interpolation"><span class="toc-text">Matrix Cross Interpolation</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -349,7 +373,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="Matrix-Cross-Interpolation"><a href="#Matrix-Cross-Interpolation" class="headerlink" title="Matrix Cross Interpolation"></a>Matrix Cross Interpolation</h2><p>Given an $M \times N$ matrix $A$, the <em>cross interpolation</em> technique (CI) yields an approximate rank $\chi$ factorization of $A$. It is distinct from the truncated singular value decomposition (SVD), in whcih one approximated $A$ by its SVD with all but the largest $\chi$ singluar values set to zero. Although the truncated SVD yields an optimal rank $\chi$ approximation of $A$ in the spectral norm, CI has the advantage that it may be constructed by querying only a small subset of the entries of $A$. CI is quasioptimal in the sense that its error is at most $O(\chi^2)$ times the optimal one.</p>
+<p>We Begin by establishing our notation, Let $\mathcal{I}&#x3D;{i_1, i_2,\ldots ,i_{\chi}}$ (respectively, $\mathcal{J}&#x3D;{j_1, j_2,\ldots ,j_{\chi}}$) denote a list of rows (columns) of A, $\mathcal{I}_a\equiv i_a$ its $a\text{th}$ elements, and $\mathbb{I}&#x3D;{1, 2,\ldots, M}$ ($\mathbb{J}&#x3D;{1, 2,\ldots, N}$) the list of the indices of all rows (columns).</p>
+<p>The matrix cross interpolation formula reas<br>$$<br>\begin{equation}<br>A&#x3D;A(\mathbb{I},\mathbb{J})\approx A(\mathbb{I},\mathcal{J})A(\mathcal{I},\mathcal{J})^{-1}A(\mathcal{I},\mathbb{J})<br>\end{equation}<br>$$</p>
+
       
        
     </div>
