@@ -47,7 +47,7 @@ The fully self-consistent $GW$ approximation implements Hedin's [^Hedin] GW fram
 
 - **Quasiparticle GW ($qpGW$)**: Focuses on determining quasiparticle energies by fitting the self-energy to a linear form around the initial mean-field solution. 
 
-- **Fully Self-Consistent GW (scGW)**: Implements a complete self-consistency loop by iteratively updating both the Green's function $ G $ and the screened interaction $ W $ until all quantities converge. This approach ensures that the Green's functions and self-energies are consistent with each other throughout the calculation, providing a robust and unbiased description of the electronic structure.
+- **Fully Self-Consistent GW ($scGW$)**: Implements a complete self-consistency loop by iteratively updating both the Green's function $ G $ and the screened interaction $ W $ until all quantities converge. This approach ensures that the Green's functions and self-energies are consistent with each other throughout the calculation, providing a robust and unbiased description of the electronic structure.
 
 In the $GW$ approximation [^Hedin], the correlated self-energy is approximated as the sum of an infinite series of Random Phase Approximation (RPA)-like "bubble" diagrams. Detailed implementation specifics for the Green code can be found in our implementation paper [^Bloch].
 
