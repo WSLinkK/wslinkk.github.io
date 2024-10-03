@@ -20,7 +20,7 @@ The second-order contribution to the self-energy in imaginary time ($\tau$) and 
 & G^{\mathbf{k_1}}_{pq}(\tau) G^{\mathbf{k_2}}_{kl}(\tau) G^{\mathbf{k_3}}_{nm}(-\tau) \delta_{\mathbf{k}+\mathbf{k_3},\mathbf{k_1}+\mathbf{k_2}},
 \end{align*}
 $$
-{{< /raw >}}
+{{< raw >}}
 
 **Explanation of the Equation:**
 
@@ -55,7 +55,7 @@ On the imaginary-time axis, the GW self-energy ${(\Sigma^{GW})}^{\mathbf{k}}(\ta
 $$
 {(\Sigma^{GW})}^{\mathbf{k}}_{i\sigma,j\sigma}(\tau) = -\frac{1}{N_{k}}\sum_{\mathbf{q}}\sum_{ab} G^{\mathbf{k-q}}_{a\sigma,b\sigma}(\tau)\tilde{W}^{\mathbf{k},\mathbf{k-q},\mathbf{k-q},\mathbf{k}}_{i a b j}(\tau)
 $$
-{{< /raw >}}
+{{< raw >}}
 
 **Explanation of the Equation:**
 
@@ -82,7 +82,7 @@ $$
 &\quad + \frac{1}{N_{k}}\sum_{\mathbf{k}_{5}\mathbf{k}_{6}\mathbf{k}_{7}\mathbf{k}_{8}}\sum_{abcd} U^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{5}\mathbf{k}_{6}}}_{i j a b} \mathit{\Pi}^{\mathbf{k}_{5}\mathbf{k}_{6}\mathbf{k}_{7}\mathbf{k}_{8}}}_{a b c d}(i\Omega_{n}) W^{\mathbf{k}_{7}\mathbf{k}_{8}\mathbf{k}_{3}\mathbf{k}_{4}}}_{c d k l}(i\Omega_{n})
 \end{aligned}
 $$
-{{< /raw >}}
+{{< raw >}}
 
 **Explanation of the Equation:**
 
@@ -104,7 +104,7 @@ The non-interacting polarization function $\mathit{\Pi}$ is defined as:
 $$
 \mathit{\Pi}^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}_{a b c d}(\tau) = \sum_{\sigma} G^{\mathbf{k}_{1}}_{d\sigma,a\sigma}(\tau) G^{\mathbf{k}_{2}}_{b\sigma,c\sigma}(-\tau) \delta_{\mathbf{k}_{1}\mathbf{k}_{4}} \delta_{\mathbf{k}_{2}\mathbf{k}_{3}}}.
 $$
-{{< /raw >}}
+{{< raw >}}
 
 **Explanation of the Equation:**
 
