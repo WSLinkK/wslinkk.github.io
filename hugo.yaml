@@ -1,0 +1,79 @@
+# Configuration
+baseURL: 'https://munkhw.com/'
+title: "Munkhorgil Wang's Personal Blog"
+theame: hextra
+
+enableRobotsTXT: true
+enableGitInfo: true
+enableEmoji: true
+hasCJKLanguage: true
+enableInlineShortcodes: true
+copyright: Munkhorgil Wang
+
+outputs:
+  home: [HTML]
+  page: [HTML]
+  section: [HTML, RSS]
+
+defaultContentLanguage: en
+
+module:
+  hugoVersion:
+    extended: true
+    min: "0.112.0"
+  imports:
+    - path: github.com/imfing/hextra
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+
+params:
+  description: "Munkhorgil Wang's Personal Blog"
+  headTitle: "Munkhorgil Wang's Personal Blog"
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
+  page:
+    width: normal
+#  editURL:
+#    enable: true
+#    base: "https://munkhw.com/edit/main/content"
+  navbar:
+    displayLogo: true
+    logo:
+      path: logo/logo.ico
+      dark: logo/logo.ico
+      width: 36px
+  footer:
+    displayCopyright: true
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      pageRef: /about
+      weight: 4
+    - name: Search
+      weight: 5
+      params:
+        type: search
+    - name: GitHub
+      weight: 6
+      url: "https://github.com/WSLinkK"
+      params:
+        icon: github
+    - name: LinkedIn
+      weight: 7
+      url: "https://www.linkedin.com/in/munkhw/"
+      params:
+        icon: linkedin
+    - name: Toggle
+      weight: 8
+      params:
+        type: toggle
+        icon: sun
