@@ -1,6 +1,6 @@
 ---
 title: Green's Function
-linkTitle:
+linkTitle: Green's Function
 weight: 2
 math: true
 katex: true

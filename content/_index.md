@@ -1,5 +1,7 @@
 ---
-title: Munkhorgil Wang's Personal Blog
+title: 
+linkTitle: Munkhorgil Wang's Personal Blog
+layout: home
 toc: false
 ---
 

@@ -1,6 +1,11 @@
 ---
 title:
-type: Welcome to My Blog!
+layout: home
+cascade:
+  type: blog
+sidebar: 
+  disableSidebar: true
+  disablePlaceHolder: true
 ---
 
 # About Me
