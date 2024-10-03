@@ -43,10 +43,11 @@ This equation effectively captures the second-order processes contributing to th
 
 The fully self-consistent $GW$ approximation implements Hedin's [^Hedin] GW framework with full frequency dependence and self-consistency on the imaginary frequency axis. This ensures that the solution is thermodynamically consistent and conserving [^BaymKadanoff]. There are several variants of the $GW$ approximation, including:
 
-- **Non-selfconsistent GW (G₀W₀)**: Uses non-interacting Green's functions and does not update the self-energy iteratively.
-- **Partially self-consistent GW**: Iterates either the Green's function or the screened interaction but not both.
-- **Quasiparticle GW**: Focuses on extracting quasiparticle energies without full self-consistency.
-- **Quasiparticle self-consistent GW (QS$GW$)**: Achieves self-consistency by updating both the Green's function and the screened interaction to best describe quasiparticles.
+- **One Shot GW ($G_0W_0$)**: Utilizes non-interacting Green's functions $ G_0 $ and does not iteratively update the self-energy. Typically starts from a mean-field solution like Density Functional Theory (DFT) and performs a single-shot GW calculation to obtain quasiparticle energies.
+
+- **Quasiparticle GW ($qpGW$)**: Focuses on determining quasiparticle energies by fitting the self-energy to a linear form around the initial mean-field solution. 
+
+- **Fully Self-Consistent GW (scGW)**: Implements a complete self-consistency loop by iteratively updating both the Green's function $ G $ and the screened interaction $ W $ until all quantities converge. This approach ensures that the Green's functions and self-energies are consistent with each other throughout the calculation, providing a robust and unbiased description of the electronic structure.
 
 In the $GW$ approximation [^Hedin], the correlated self-energy is approximated as the sum of an infinite series of Random Phase Approximation (RPA)-like "bubble" diagrams. Detailed implementation specifics for the Green code can be found in our implementation paper [^Bloch].
 
