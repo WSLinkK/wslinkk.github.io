@@ -40,9 +40,9 @@ params:
     displayToggle: true
   page:
     width: normal
-#  editURL:
-#    enable: true
-#    base: "https://munkhw.com/edit/main/content"
+  editURL:
+    enable: true
+    base: "https://github.com/WSLinkK/wslinkk.github.io/edit/main/content"
   navbar:
     displayLogo: true
     logo:

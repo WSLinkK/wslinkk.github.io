@@ -1,5 +1,5 @@
 ---
-title: About
+title:
 type: Welcome to My Blog!
 ---
 

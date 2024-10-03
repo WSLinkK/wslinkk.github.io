@@ -1,55 +1,32 @@
 ---
 title: Two Electron Coulomb Integral
-date: 2024-03-14 12:00:00
-tags: density fitting
-categories: [Basic, Integral]
-mathjax: true
+linkTitle: eri
+weight: 1
+math: true
+katex: true
 ---
-### Four-Center Two-Electron Coulomb Integral
 
-## Directory Structure
+Electron-electron repulsion integrals are fundamental quantities in quantum chemistry that describe the Coulombic interactions between pairs of electrons occupying different molecular orbitals. These integrals are essential for accurately determining the electron correlation and overall energy of a molecular system.
 
-- `df_hf_int`: Directory where the three-center two-electron integrals are saved.
-- `V_0.h5`: HDF5 file containing the three-center two-electron intagrals.
-
-## Integrals Definition
-
-### Chemist's Notation
-In **chemist's notation**, the integral is represented as
 $$
-\begin{equation}
-U_{ijkl} = (ij\vert kl) = \int\int dr_1 dr_2 \phi^*_i(r_1)\phi_j(r_1)\frac{1}{\vert r_1-r_2\vert}\phi^*_k(r_2)\phi_l(r_2)
-\end{equation}
+   U_{pqrs} = \int \psi^*_p(\mathbf{r}_1, \sigma_1) \psi_q(\mathbf{r}_1, \sigma_1) \frac{1}{\vert\mathbf{r}_1-\mathbf{r}_2\vert}\psi^*_r(\mathbf{r}_2, \sigma_2) \psi_s(\mathbf{r}_2, \sigma_2) d\mathbf{r}_1 d\mathbf{r}_2 d\sigma_1 d\sigma_2
 $$
-- **Function**: `chem_four_center_integral` computes this integral.
-- Used for scGW
-### Physicist's Notation
-In **physicist's notation**, the integral is defined as
 $$
-\begin{equation}
-V_{ijkl} = \langle ij\vert kl\rangle =  \int\int dr_1 dr_2 \phi^*_i(r_1)\phi_j^*(r_2)\frac{1}{\vert r_1-r_2\vert}\phi_k(r_2)\phi_l(r_1) 
-\end{equation}
+   = \left( pq \vert rs \right) \text{ in chemists' notation}
 $$
-- **Function**: `phys_four_center_integral` computes this integral.
-- Used for GF2
-### Simplification through Density Fitting
-The expression for $U_{ijkl}=\sum_{Q} V_{ij}(Q)V_{kl}(Q)$ and $V_{ijkl}=\sum_{Q} V_{il}(Q)V_{jk}(Q)$ suggests a simplification technique known as density fitting or resolution of the identity (RI), where the complex four-center integrals are approximated using a sum over simpler terms involving fewer centers. This approach significantly reduces computational cost.
 $$
-\begin{equation}
-V_{ij}(Q) = (ij\vert Q) = \int \int dr_1dr_2 \phi_i(r_1) \phi_j(r_1) \frac{1}{\vert r_1-r_2\vert}\chi_{Q}(r_2)
-\end{equation}
+   = \int \phi^*_p(\mathbf{r}_1, \sigma_1) \phi^*_r(\mathbf{r}_2, \sigma_2) \frac{1}{\vert\mathbf{r}_1-\mathbf{r}_2\vert} \phi_q(\mathbf{r}_1, \sigma_1) \phi_s(\mathbf{r}_2, \sigma_2) d\mathbf{r}_1 d\mathbf{r}_2 d\sigma_1 d\sigma_2
+$$
+$$
+   = \langle pr \vert qs \rangle \text{ in physicists' notation}
 $$
 
-## Usage
-Read the integrals from `df_hf_int`
-```python
-V_Qij = read_integrals(path_to_df)
-```
-Compute the coulomb integral in chemist's notation, $U_{ijkl}$
-```python
-U_ijkl = chem_four_center_integral(V_Qij)
-```
-Compute the coulomb in physicist's notation, $V_{ijkl}$
-```python
-V_ijkl = phys_four_center_integral(V_Qij)
-```
+In chemists' notation, the integral $(pq\vert rs)$ represents the interaction between electrons in orbitals $p$ and $q$ with those in orbitals $r$ and $s$. Alternatively, physicists' notation expresses the same integral as $\langle pr \vert qs \rangle$, highlighting the symmetry and exchange interactions inherent in the system.
+
+### Resolution of Identity/Density Fitting
+
+Calculating these four-center integrals directly can be computationally demanding, especially for large systems. To mitigate this, techniques such as Resolution of Identity (RI) or Density Fitting are employed. These methods approximate the electron-electron repulsion integrals by decomposing them into a sum over auxiliary basis functions, as shown in equation (3). This approximation significantly reduces the computational cost while maintaining accuracy, facilitating the study of larger and more complex molecular systems.
+
+$$
+   U_{pqrs} = \sum_{Q} V_{pq}(Q) V_{rs}(Q)
+$$

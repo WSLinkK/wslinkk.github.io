@@ -1,9 +1,9 @@
 ---
 title: Tensor Train Cross Interpolation
-date: 2024-03-18 21:56:55
-tags:
-categories: Tensor Train 
-mathjax: true
+linkTitle: TCI
+weight: 3
+math: true
+katex: true
 ---
 ## Matrix Cross Interpolation
 
