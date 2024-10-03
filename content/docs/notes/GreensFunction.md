@@ -11,7 +11,7 @@ Self-consistent second-order perturbation theory is a conserving diagrammatic ap
 
 The second-order contribution to the self-energy in imaginary time and momentum space is[^rusakov][^BandGapPaper]:
 
-{{< raw >}}
+$$
 \begin{align*}
 \Sigma^{(2)}_{ij}(\tau,\mathbf{k}) = - \frac{1}{N_{\mathbf{k}}^3}\sum\limits_{\substack{klmnpq\\ \mathbf{k_1}\mathbf{k_2}\mathbf{k_3} }} & 
 (2U^{\mathbf{k_1}\mathbf{k}\mathbf{k_2}\mathbf{k_3}}_{qjln} - U^{\mathbf{k_2}\mathbf{k}\mathbf{k_1}\mathbf{k_3}}_{ljqn})
@@ -20,7 +20,7 @@ The second-order contribution to the self-energy in imaginary time and momentum 
  &G^{\mathbf{k_1}}_{pq}(\tau)G^{\mathbf{k_2}}_{kl}(\tau)G^{\mathbf{k_3}}_{nm}(-\tau)\delta_{\mathbf{k}+\mathbf{k_3},\mathbf{k_1}+\mathbf{k_2}},
 \end{align*}
 $$
-{{< /raw >}}
+
 
 Here, $G^{\mathbf{k}}_{ij}(\tau)$ is the imaginary-time Green's function, $U^{\mathbf{k}\mathbf{k_1}\mathbf{k_2}\mathbf{k_3}}_{ijkl}$ is the Coulomb interaction tensor, and $\delta_{\mathbf{k}+\mathbf{k_3},\mathbf{k_1}+\mathbf{k_2}}$ ensures momentum conservation.
 
@@ -32,11 +32,11 @@ In the $GW$ approximation [^Hedin], the correlated self-energy is approximated a
 
 On the imaginary-time axis, the GW self-energy ${(\Sigma^{GW})}^{\mathbf{k}}(\tau)$ is given by:
 
-{{< raw >}}
+
 $$
 {(\Sigma^{GW})}^{\mathbf{k}}_{i\sigma,j\sigma}(\tau) = -\frac{1}{N_{k}}\sum_{\mathbf{q}}\sum_{ab} G^{\mathbf{k-q}}_{a\sigma,b\sigma}(\tau)\tilde{W}^{\mathbf{k},\mathbf{k-q},\mathbf{k-q},\mathbf{k}}_{i a b j}(\tau)
 $$
-{{< /raw >}}
+
 
 where $\tilde{W}$ is the effective screened interaction tensor, defined as the difference between the full dynamically screened interaction $W$ and the bare interaction $\boldsymbol{U}$, i.e., $\tilde{W} = W - U$.
 
@@ -44,22 +44,22 @@ Here and throughout, the indices $\{i,j,k,l,a,b\}$ represent orbital indices, $\
 
 In the $GW$ approximation, the screened interaction $W$ in frequency space is expressed as [^Hedin]:
 
-{{< raw >}}
+
 $$
 \begin{aligned}
 &W^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}_{i j k l}(i\Omega_{n}) = U^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}}_{i j k l} \\
 &\quad + \frac{1}{N_{k}}\sum_{\mathbf{k}_{5}\mathbf{k}_{6}\mathbf{k}_{7}\mathbf{k}_{8}}\sum_{abcd} U^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{5}\mathbf{k}_{6}}}_{i j a b} \mathit{\Pi}^{\mathbf{k}_{5}\mathbf{k}_{6}\mathbf{k}_{7}\mathbf{k}_{8}}}_{a b c d}(i\Omega_{n}) W^{\mathbf{k}_{7}\mathbf{k}_{8}\mathbf{k}_{3}\mathbf{k}_{4}}}_{c d k l}(i\Omega_{n})
 \end{aligned}
 $$
-{{< /raw >}}
+
 
 where $\boldsymbol{\mathit{\Pi}}$ is the non-interacting polarization function:
 
-{{< raw >}}
+
 $$
 \mathit{\Pi}^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}_{a b c d}(\tau) = \sum_{\sigma} G^{\mathbf{k}_{1}}_{d\sigma,a\sigma}(\tau) G^{\mathbf{k}_{2}}_{b\sigma,c\sigma}(-\tau) \delta_{\mathbf{k}_{1}\mathbf{k}_{4}} \delta_{\mathbf{k}_{2}\mathbf{k}_{3}}.
 $$
-{{< /raw >}}
+
 
 Green also provides an implementation of the GW approximation using the exact two-component formalism with the one-electron approximation (X2C-1e) for solving relativistic problems, such as those involving spin-orbit coupling [^rel].
 

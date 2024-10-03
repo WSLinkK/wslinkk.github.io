@@ -1,7 +1,7 @@
 ---
 title: Tensor Train Cross Interpolation
-linkTitle: TCI
-weight: 1
+linkTitle: Tensor Train Cross Interpolation
+weight: 4
 math: true
 katex: true
 ---
