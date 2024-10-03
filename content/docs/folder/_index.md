@@ -1,10 +1,8 @@
 ---
-title: Folder
+title: Notes
 type: docs
-prev: docs/first-page
-next: docs/folder/leaf
-sidebar:
-  open: true
+icon: auto_stories
+weight: 1
 ---
 
 Pages can be organized into folders.

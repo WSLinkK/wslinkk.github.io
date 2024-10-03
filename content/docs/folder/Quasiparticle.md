@@ -1,7 +1,7 @@
 ---
 title: Quasiparticle
 linkTitle: Quasiparticle
-weight: 4
+weight: 2
 math: true
 katex: true
 ---
