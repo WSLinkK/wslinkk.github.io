@@ -29,9 +29,9 @@ $$
 
 - **$N_{\mathbf{k}}$**: The number of discrete momentum points considered in the finite cluster.
 
-- **Summations**: The summations run over all possible orbital indices ($k, l, m, n, p, q$) and momentum indices ($\mathbf{k_1}, \mathbf{k_2}, \mathbf{k_3}$)).
+- **Summations**: The summations run over all possible orbital indices ($k, l, m, n, p, q$) and momentum indices ($\mathbf{k_1}, \mathbf{k_2}, \mathbf{k_3}$).
 
-- **$U^{\mathbf{k_1}\mathbf{k}\mathbf{k_2}\mathbf{k_3}}_{qjln}$ and $U^{\mathbf{k_2}\mathbf{k}\mathbf{k_1}\mathbf{k_3}}_{ljqn}$**: These are components of the Coulomb interaction tensor, representing the electron-electron interactions between different orbitals and momenta.
+- **{{< raw >}}$U^{\mathbf{k_1}\mathbf{k}\mathbf{k_2}\mathbf{k_3}}_{qjln}${{< /raw >}} and {{< raw >}}$U^{\mathbf{k_2}\mathbf{k}\mathbf{k_1}\mathbf{k_3}}_{ljqn}${{< /raw >}}**: These are components of the Coulomb interaction tensor, representing the electron-electron interactions between different orbitals and momenta.
 
 - **$G^{\mathbf{k}}_{ij}(\tau)$**: The imaginary-time Green's function, describing the propagation of an electron from orbital $j$ to $i$ over time $\tau$.
 
@@ -78,22 +78,22 @@ In the GW approximation, the screened interaction $W$ in frequency space is give
 
 {{< raw >}}
 $$
-\begin{aligned}
-&W^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}_{i j k l}(i\Omega_{n}) = U^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}}_{i j k l} \\
-&\quad + \frac{1}{N_{k}}\sum_{\mathbf{k}_{5}\mathbf{k}_{6}\mathbf{k}_{7}\mathbf{k}_{8}}\sum_{abcd} U^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{5}\mathbf{k}_{6}}}_{i j a b} \mathit{\Pi}^{\mathbf{k}_{5}\mathbf{k}_{6}\mathbf{k}_{7}\mathbf{k}_{8}}}_{a b c d}(i\Omega_{n}) W^{\mathbf{k}_{7}\mathbf{k}_{8}\mathbf{k}_{3}\mathbf{k}_{4}}}_{c d k l}(i\Omega_{n})
-\end{aligned}
+\begin{align*}
+&W^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}_{i j k l}(i\Omega_{n}) = U^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}_{i j k l} \\
+&\quad + \frac{1}{N_{k}}\sum_{\mathbf{k}_{5}\mathbf{k}_{6}\mathbf{k}_{7}\mathbf{k}_{8}}\sum_{abcd} U^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{5}\mathbf{k}_{6}}_{i j a b} \mathit{\Pi}^{\mathbf{k}_{5}\mathbf{k}_{6}\mathbf{k}_{7}\mathbf{k}_{8}}_{a b c d}(i\Omega_{n}) W^{\mathbf{k}_{7}\mathbf{k}_{8}\mathbf{k}_{3}\mathbf{k}_{4}}_{c d k l}(i\Omega_{n})
+\end{align*}
 $$
 {{< /raw >}}
 
 **Explanation of the Equation:**
 
-- **$W^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}_{i j k l}(i\Omega_{n})$**: The screened interaction tensor for orbitals $i, j, k, l$ and momenta $\mathbf{k}_{1}, \mathbf{k}_{2}, \mathbf{k}_{3}, \mathbf{k}_{4}$ at Matsubara frequency $i\Omega_{n}$.
+- **{{< raw >}}$W^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}_{i j k l}(i\Omega_{n})${{< /raw >}}**: The screened interaction tensor for orbitals $i, j, k, l$ and momenta {{< raw >}}$\mathbf{k}_{1}, \mathbf{k}_{2}, \mathbf{k}_{3}, \mathbf{k}_{4}${{< /raw >}} at Matsubara frequency $i\Omega_{n}$.
 
-- **$U^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}}_{i j k l}$**: The bare Coulomb interaction tensor.
+- **{{< raw >}}$U^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}_{i j k l}${{< /raw >}}**: The bare Coulomb interaction tensor.
 
-- **$\mathit{\Pi}^{\mathbf{k}_{5}\mathbf{k}_{6}\mathbf{k}_{7}\mathbf{k}_{8}}}_{a b c d}(i\Omega_{n})$**: The non-interacting polarization function, which describes how electron density responds to external perturbations.
+- **{{< raw >}}$\mathit{\Pi}^{\mathbf{k}_{5}\mathbf{k}_{6}\mathbf{k}_{7}\mathbf{k}_{8}}_{a b c d}(i\Omega_{n})${{< /raw >}}**: The non-interacting polarization function, which describes how electron density responds to external perturbations.
 
-- **Summations**: These account for all possible interactions and screening processes involving intermediate states indexed by $\mathbf{k}_{5}, \mathbf{k}_{6}, \mathbf{k}_{7}, \mathbf{k}_{8}$ and orbitals $a, b, c, d$.
+- **Summations**: These account for all possible interactions and screening processes involving intermediate states indexed by {{< raw >}}$\mathbf{k}_{5}, \mathbf{k}_{6}, \mathbf{k}_{7}, \mathbf{k}_{8}${{< /raw >}} and orbitals $a, b, c, d$.
 
 This equation iteratively defines the screened interaction $W$ by accounting for the polarization effects mediated by the non-interacting polarization function $\mathit{\Pi}$.
 
@@ -109,11 +109,11 @@ $$
 
 **Explanation of the Equation:**
 
-- **$\mathit{\Pi}^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}}_{a b c d}(\tau)$**: The polarization function describing the response of the electron density to perturbations.
+- **{{< raw >}}$\mathit{\Pi}^{\mathbf{k}_{1}\mathbf{k}_{2}\mathbf{k}_{3}\mathbf{k}_{4}}_{a b c d}(\tau)${{< /raw >}}**: The polarization function describing the response of the electron density to perturbations.
 
 - **$G^{\mathbf{k}}_{ij}(\tau)$**: The Green's function representing the propagation of an electron from orbital $j$ to $i$ over imaginary time $\tau$.
 
-- **$\delta_{\mathbf{k}_{1}\mathbf{k}_{4}} \delta_{\mathbf{k}_{2}\mathbf{k}_{3}}}$**: Ensures momentum conservation within the polarization bubble.
+- **{{< raw >}}$\delta_{\mathbf{k}_{1}\mathbf{k}_{4}} \delta_{\mathbf{k}_{2}\mathbf{k}_{3}}${{< /raw >}}**: Ensures momentum conservation within the polarization bubble.
 
 This polarization function is crucial for determining how the bare Coulomb interaction is screened by the presence of other electrons in the system.
 
