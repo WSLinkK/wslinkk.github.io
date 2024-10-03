@@ -4,8 +4,9 @@
   <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
 {{- else }}
   {{- $styles := resources.Get "css/compiled/main.css" -}}
+
   {{- if hugo.IsProduction }}
-    {{- $styles = $styles | toCSS | minify | fingerprint }}
+    {{- $styles = $styles | minify | fingerprint }}
     <link rel="preload" href="{{ $styles.RelPermalink }}" as="style" integrity="{{ $styles.Data.Integrity }}" />
     <link href="{{ $styles.RelPermalink }}" rel="stylesheet" integrity="{{ $styles.Data.Integrity }}" />
   {{- else }}
@@ -18,22 +19,20 @@
 <!-- Icons -->
 {{- $icons := resources.Get "css/icons.css" }}
 {{- if hugo.IsProduction -}}
-  {{- $icons = $icons | toCSS | minify | fingerprint }}
+  {{- $icons = $icons | minify | fingerprint }}
   <link href="{{ $icons.RelPermalink }}" rel="stylesheet" integrity="{{ $icons.Data.Integrity }}" />
 {{- else }}
   <link href="{{ $icons.RelPermalink }}" rel="stylesheet" />
 {{- end }}
 
-
 <!-- Custom CSS -->
 {{- $custom := resources.Get "css/custom.css" }}
 {{- if hugo.IsProduction -}}
-  {{- $custom = $custom | toCSS | minify | fingerprint }}
+  {{- $custom = $custom | minify | fingerprint }}
   <link href="{{ $custom.RelPermalink }}" rel="stylesheet" integrity="{{ $custom.Data.Integrity }}" />
 {{- else }}
   <link href="{{ $custom.RelPermalink }}" rel="stylesheet" />
 {{- end }}
-
 
 
 <!-- Google Tag Manager -->
