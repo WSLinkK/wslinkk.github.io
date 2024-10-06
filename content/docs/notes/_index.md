@@ -1,9 +1,6 @@
 ---
 title: Notes
 linkTitle: Notes
-icon: auto_stories
-weight: 1
-next: "/docs/integral"
+weight: 4
+prev: "/docs/tensor"
 ---
-
-Pages can be organized into folders.

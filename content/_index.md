@@ -10,7 +10,7 @@ Hello and welcome! I’m Munkhorgil Wang, a Ph.D. candidate at the University of
 ## Explore
 
 {{< cards >}}
-  {{< card link="docs" title="Docs" icon="book-open" >}}
+  {{< card link="docs" title="Notes" icon="book-open" >}}
   {{< card link="about" title="About" icon="user" >}}
 {{< /cards >}}
 
