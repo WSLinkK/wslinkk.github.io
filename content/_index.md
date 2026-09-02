@@ -46,6 +46,9 @@ toc: false
           <feGaussianBlur stdDeviation="4" result="blur" />
           <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
         </filter>
+        <marker id="self-energy-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+          <path d="M0 0L8 4L0 8Z" class="research-orbit__self-energy-arrow" />
+        </marker>
       </defs>
 
       <circle class="research-orbit__density" cx="210" cy="210" r="164" />
@@ -55,9 +58,34 @@ toc: false
         <circle cx="210" cy="210" r="144" />
       </g>
 
+      <g class="research-orbit__orbital-density" transform="rotate(-18 210 210)">
+        <path d="M210 210C171 174 109 172 78 210C109 248 171 246 210 210Z" />
+        <path d="M210 210C249 174 311 172 342 210C311 248 249 246 210 210Z" />
+        <path class="research-orbit__orbital-node" d="M210 210C183 188 146 188 124 210C146 232 183 232 210 210ZM210 210C237 188 274 188 296 210C274 232 237 232 210 210Z" />
+      </g>
+
+      <g class="research-orbit__callout-lines">
+        <path d="M82 70L137 132" />
+        <path d="M338 70L302 132" />
+        <path d="M82 350L145 302" />
+        <path d="M338 350L306 311" />
+        <circle cx="137" cy="132" r="2.5" />
+        <circle cx="302" cy="132" r="2.5" />
+        <circle cx="145" cy="302" r="2.5" />
+        <circle cx="306" cy="311" r="2.5" />
+      </g>
+
+      <g class="research-orbit__correlation">
+        <path class="research-orbit__correlation-link" d="M118 282Q210 342 307 278" />
+        <circle class="research-orbit__correlation-node" cx="118" cy="282" r="4" />
+        <circle class="research-orbit__correlation-node" cx="307" cy="278" r="4" />
+      </g>
+
       <g class="research-orbit__plane" transform="rotate(18 210 210)">
         <ellipse class="research-orbit__ring" cx="210" cy="210" rx="151" ry="69" />
         <g class="research-orbit__electron-motion" filter="url(#electron-glow)">
+          <circle class="research-orbit__screening-shell research-orbit__screening-shell--outer" r="19" />
+          <circle class="research-orbit__screening-shell" r="12" />
           <path class="research-orbit__electron-trail" d="M-27 0H-9" />
           <circle class="research-orbit__electron" r="6" />
           <animateMotion dur="7.5s" begin="-1.2s" repeatCount="indefinite" rotate="auto" path="M59 210a151 69 0 1 0 302 0a151 69 0 1 0-302 0" />
@@ -83,6 +111,15 @@ toc: false
         <circle class="research-orbit__electron research-orbit__electron-static" cx="59" cy="210" r="5.5" />
       </g>
 
+      <path class="research-orbit__self-energy-loop" d="M210 147A63 63 0 1 1 157 176" marker-end="url(#self-energy-arrow)" />
+
+      <g class="research-orbit__tensor-network" transform="translate(294 294)">
+        <path d="M0 0L18 12L36 0M0 20L18 12L36 20M18 12V36M0 20L18 36L36 20" />
+        <circle cx="0" cy="0" r="3" /><circle cx="36" cy="0" r="3" />
+        <circle cx="0" cy="20" r="3" /><circle cx="18" cy="12" r="3" />
+        <circle cx="36" cy="20" r="3" /><circle cx="18" cy="36" r="3" />
+      </g>
+
       <g class="research-orbit__nucleus">
         <circle class="research-orbit__nucleus-halo" cx="210" cy="210" r="54" />
         <circle class="research-orbit__nucleus-shell" cx="210" cy="210" r="41" />
@@ -95,11 +132,13 @@ toc: false
         <circle class="research-orbit__nucleon research-orbit__nucleon--proton" cx="207" cy="210" r="10" />
         <circle class="research-orbit__nucleus-highlight" cx="190" cy="183" r="4" />
       </g>
+      <text class="research-orbit__micro-label research-orbit__micro-label--orbital" x="62" y="179">ORBITAL WAVEFUNCTION</text>
+      <text class="research-orbit__micro-label research-orbit__micro-label--correlation" x="162" y="327">ELECTRON CORRELATION</text>
     </svg>
-    <span class="research-orbit__label research-orbit__label--gg">G</span>
-    <span class="research-orbit__label research-orbit__label--gw">GW</span>s
-    <span class="research-orbit__label research-orbit__label--thc">THC</span>
-    <span class="research-orbit__label research-orbit__label--sigma">Σ</span>
+    <span class="research-orbit__label research-orbit__label--green"><strong>G(ω)</strong><small>Green’s function</small></span>
+    <span class="research-orbit__label research-orbit__label--gw"><strong>GW</strong><small>screening</small></span>
+    <span class="research-orbit__label research-orbit__label--thc"><strong>THC</strong><small>low-rank integrals</small></span>
+    <span class="research-orbit__label research-orbit__label--sigma"><strong>Σ(ω)</strong><small>self-energy</small></span>
   </div>
 </section>
 <section class="home-section" aria-labelledby="focus-heading">
