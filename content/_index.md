@@ -24,12 +24,56 @@ toc: false
 
   <div class="research-orbit" aria-hidden="true">
     <div class="research-orbit__glow"></div>
-    <div class="research-orbit__ring research-orbit__ring--one"></div>
-    <div class="research-orbit__ring research-orbit__ring--two"></div>
-    <div class="research-orbit__ring research-orbit__ring--three"></div>
-    <div class="research-orbit__core-track">
-      <div class="research-orbit__core">G</div>
-    </div>
+    <svg class="research-orbit__field" viewBox="0 0 420 420">
+      <defs>
+        <radialGradient id="nucleus-shell" cx="35%" cy="28%" r="75%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="42%" stop-color="#dce8ff" />
+          <stop offset="100%" stop-color="#91aff0" />
+        </radialGradient>
+        <linearGradient id="wave-positive" x1="0" x2="1">
+          <stop offset="0%" stop-color="#70a0ff" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#2463eb" stop-opacity="0.34" />
+        </linearGradient>
+        <linearGradient id="wave-negative" x1="1" x2="0">
+          <stop offset="0%" stop-color="#8067ef" stop-opacity="0.08" />
+          <stop offset="100%" stop-color="#8067ef" stop-opacity="0.29" />
+        </linearGradient>
+        <filter id="electron-glow" x="-200%" y="-200%" width="400%" height="400%">
+          <feGaussianBlur stdDeviation="4" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
+
+      <g class="research-orbit__wavefunction research-orbit__wavefunction--primary">
+        <path class="research-orbit__lobe research-orbit__lobe--negative" d="M207 210C174 151 101 145 63 210c38 65 111 59 144 0Z" />
+        <path class="research-orbit__lobe research-orbit__lobe--positive" d="M213 210c33-59 106-65 144 0-38 65-111 59-144 0Z" />
+        <path class="research-orbit__contour" d="M195 210c-27-37-77-35-105 0 28 35 78 37 105 0Zm30 0c27-37 77-35 105 0-28 35-78 37-105 0Z" />
+      </g>
+      <path class="research-orbit__wave-line" d="M54 211c26-40 52 40 78 0s52-40 78 0 52 40 78 0 52-40 78 0" />
+      <path class="research-orbit__electron-path" d="M73 245C105 100 318 91 352 204c35 117-110 170-221 111C64 280 51 208 92 158" />
+      <path class="research-orbit__path-arrow" d="M318 303l13 2-6 11" />
+
+      <g class="research-orbit__electron-motion" filter="url(#electron-glow)">
+        <path class="research-orbit__electron-trail" d="M-26 0H-8" />
+        <circle class="research-orbit__electron" r="6" />
+        <animateMotion dur="6.5s" repeatCount="indefinite" rotate="auto" path="M73 245C105 100 318 91 352 204c35 117-110 170-221 111C64 280 51 208 92 158" />
+      </g>
+      <g class="research-orbit__electron-static" transform="translate(318 303)">
+        <circle class="research-orbit__electron" r="6" />
+      </g>
+
+      <g class="research-orbit__nucleus">
+        <circle class="research-orbit__nucleus-halo" cx="210" cy="210" r="49" />
+        <circle class="research-orbit__nucleus-shell" cx="210" cy="210" r="34" />
+        <circle class="research-orbit__nucleon research-orbit__nucleon--proton" cx="198" cy="198" r="10" />
+        <circle class="research-orbit__nucleon research-orbit__nucleon--neutron" cx="219" cy="197" r="10" />
+        <circle class="research-orbit__nucleon research-orbit__nucleon--neutron" cx="197" cy="220" r="10" />
+        <circle class="research-orbit__nucleon research-orbit__nucleon--proton" cx="219" cy="220" r="10" />
+        <circle class="research-orbit__nucleus-highlight" cx="194" cy="190" r="4" />
+      </g>
+    </svg>
+    <span class="research-orbit__label research-orbit__label--gg">GG</span>
     <span class="research-orbit__label research-orbit__label--gw">GW</span>
     <span class="research-orbit__label research-orbit__label--thc">THC</span>
     <span class="research-orbit__label research-orbit__label--sigma">Σ</span>

@@ -1,17 +1,37 @@
 ---
-title: Tensor
-linkTitle: Tensor
+title: Tensor Methods
+linkTitle: Tensor Methods
+description: Low-rank representations that make high-dimensional electronic-structure calculations tractable.
 weight: 3
 prev: "/docs/solid_state_physics"
 next: "/docs/notes"
+math: true
 ---
 
-A **tensor** is a multidimensional array that generalizes scalars (0D), vectors (1D), and matrices (2D) to higher dimensions. Tensors are widely used in fields like physics, machine learning, and computational chemistry because they allow the efficient representation and manipulation of data that naturally occurs in multiple dimensions.
+A tensor is a multidimensional array, but in computational many-body theory the important question is not its order—it is whether the apparent high-dimensional complexity contains compressible structure. Low-rank decompositions replace a dense object with smaller factors that can be stored, contracted, and evaluated efficiently.
 
-In **many-body perturbation theory (MBPT)**, dealing with high-dimensional tensors (such as electron integrals) becomes computationally expensive due to the large amount of memory and computational power required. Tensor decompositions offer a way to reduce this complexity by approximating high-dimensional tensors with lower-dimensional representations, while maintaining accuracy.
+## Why compression matters
 
-One popular decomposition method is the **Tensor Train (TT)** decomposition, where a high-dimensional tensor is factored into a sequence of low-rank matrices, known as "cores." This significantly reduces storage and computational costs. TT decomposition allows tensors to be manipulated efficiently and is particularly useful in MBPT, where electron integrals and correlation functions are naturally tensorial in structure.
+An order-$d$ tensor with mode size $n$ contains $n^d$ entries. This exponential growth is the curse of dimensionality. A tensor-train representation instead writes
 
-Other decomposition methods, such as **canonical polyadic (CP) decomposition** and **hierarchical Tucker (HT) decomposition**, similarly approximate tensors by breaking them into simpler components. These methods can dramatically reduce the cost of tensor operations and enable faster computations in MBPT by efficiently handling the large-scale tensors involved in electron interactions.
+$$
+A(i_1,\ldots,i_d)\approx G_1(i_1)G_2(i_2)\cdots G_d(i_d),
+$$
 
-By leveraging tensor decompositions, MBPT calculations can be made scalable and more computationally feasible, particularly when working with systems involving complex interactions.
+where each $G_k(i_k)$ is a small matrix and the connecting dimensions are the TT ranks. When those ranks remain moderate, storage changes from exponential in $d$ to approximately $O(dnr^2)$.
+
+{{< raw >}}
+<div class="note-concept-grid">
+  <article><span>CP</span><h3>Canonical polyadic</h3><p>A sum of rank-one outer products with compact storage but delicate rank behavior.</p></article>
+  <article><span>TT</span><h3>Tensor train</h3><p>A chain of three-index cores with stable algorithms and controllable bond dimensions.</p></article>
+  <article><span>THC</span><h3>Hypercontraction</h3><p>Structured factorization tailored to electron-repulsion tensors and many-body contractions.</p></article>
+</div>
+{{< /raw >}}
+
+## Entry-sampling methods
+
+{{< raw >}}
+<div class="collection-card-grid collection-card-grid--single">
+  <a class="collection-card" href="/docs/tensor/tensor_train_cross_interpolation/"><span class="collection-card__tag">Adaptive compression</span><h3>Tensor-train cross interpolation</h3><p>Construct a low-rank approximation using selected tensor entries instead of materializing the full array.</p><span class="text-link">Read the note →</span></a>
+</div>
+{{< /raw >}}

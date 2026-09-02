@@ -1,17 +1,32 @@
 ---
 title: GW Approximation
 linkTitle: GW Approximation
+description: From Hedin's screened interaction to self-consistent GW equations, variants, observables, and limitations.
 weight: 2
 math: true
 katex: true
 ---
-The fully self-consistent $GW$ approximation implements Hedin's [^Hedin] GW framework with full frequency dependence and self-consistency on the imaginary frequency axis. This ensures that the solution is thermodynamically consistent and conserving [^BaymKadanoff]. There are several variants of the $GW$ approximation, including:
+The fully self-consistent $GW$ approximation implements Hedin's [^Hedin] framework with full frequency dependence and self-consistency on the imaginary-frequency axis. A fully self-consistent solution is thermodynamically consistent and conserving [^BaymKadanoff], while less expensive variants update only selected quantities.
 
-- **One Shot GW ($G_0W_0$)**: Utilizes non-interacting Green's functions $ G_0 $ and does not iteratively update the self-energy. Typically starts from a mean-field solution like Density Functional Theory (DFT) and performs a single-shot GW calculation to obtain quasiparticle energies.
+{{< raw >}}
+<div class="note-summary">
+  <div><span>Self-energy</span><strong>Σ ≈ −GW</strong></div>
+  <div><span>Screening</span><strong>W = U + UΠW</strong></div>
+  <div><span>Polarization</span><strong>Π ≈ GG</strong></div>
+</div>
+{{< /raw >}}
 
-- **Quasiparticle GW ($qpGW$)**: Focuses on determining quasiparticle energies by fitting the self-energy to a linear form around the initial mean-field solution. 
+## Common GW variants
 
-- **Fully Self-Consistent GW ($scGW$)**: Implements a complete self-consistency loop by iteratively updating both the Green's function $ G $ and the screened interaction $ W $ until all quantities converge. This approach ensures that the Green's functions and self-energies are consistent with each other throughout the calculation, providing a robust and unbiased description of the electronic structure.
+- **One-shot GW ($G_0W_0$)** evaluates the self-energy once from a fixed mean-field propagator $G_0$ and fixed screening $W_0$. Its result therefore retains a starting-point dependence.
+
+- **Eigenvalue-only GW with fixed screening ($evGW_0$)** updates quasiparticle energies in $G$ while keeping $W_0$ fixed. It is iterative, but it is not fully self-consistent because the screening and orbitals are not updated.
+
+- **Eigenvalue-only GW ($evGW$)** updates energies entering both $G$ and $W$, usually while keeping the orbitals fixed. This can reduce starting-point dependence without solving the full Dyson problem.
+
+- **Quasiparticle self-consistent GW ($qsGW$)** iteratively maps the dynamical self-energy to an effective static Hermitian potential. It updates energies and orbitals, but it remains conceptually distinct from fully dynamical Dyson self-consistency.
+
+- **Fully self-consistent GW ($scGW$)** iterates the frequency-dependent $G$, rebuilds $W$, and solves Dyson's equation until all coupled quantities converge. No fixed $G_0$ or $W_0$ remains in the final solution.
 
 In the $GW$ approximation [^Hedin], the correlated self-energy is approximated as the sum of an infinite series of Random Phase Approximation (RPA)-like "bubble" diagrams. Detailed implementation specifics for the Green code can be found in our implementation paper [^Bloch].
 
@@ -84,6 +99,36 @@ This polarization function is crucial for determining how the bare Coulomb inter
 
 Green also provides an implementation of the GW approximation using the exact two-component formalism with the one-electron approximation (X2C-1e) for solving relativistic problems, such as those involving spin-orbit coupling [^rel].
 
+## Computational loop
+
+For a fully self-consistent calculation, the coupled objects are updated together:
+
+1. Construct the polarization $\Pi[G]$ from the current propagator.
+2. Solve the screening equation for $W$.
+3. Contract $G$ and the correlation part of $W$ to obtain $\Sigma^{GW}$.
+4. Add static Hartree and exchange terms consistently with the chosen convention.
+5. Solve Dyson's equation for a new $G$ and adjust the chemical potential.
+6. Mix and iterate until $G$, $\Sigma$, density, and thermodynamic targets converge.
+
+On the imaginary axis this loop is numerically smooth, but charged-excitation spectra require analytic continuation or a real-axis treatment. Agreement of total energies does not by itself guarantee converged spectral features.
+
+## What GW captures
+
+The screened interaction resums an infinite sequence of polarization bubbles. This makes GW particularly effective for long-range screening and charged excitations in weakly to moderately correlated molecules and solids. The self-energy shifts quasiparticle energies, redistributes spectral weight, and introduces finite lifetimes.
+
+The approximation omits the vertex $\Gamma$ by setting it to its lowest-order value. As a result, screening and self-energy corrections can become unbalanced. One-shot results depend on the starting mean-field reference; full self-consistency removes that dependence but can broaden spectra or alter error cancellation. Vertex-corrected approaches aim to treat these missing response and self-energy contributions more consistently.
+
+## GW compared with GF2
+
+| | GW | GF2 |
+|---|---|---|
+| Effective interaction | Dynamically screened $W$ | Bare Coulomb $U$ |
+| Infinite resummation | Polarization bubbles | Generated only through Dyson iteration |
+| Second-order exchange | Absent in standard GW | Included |
+| Typical strength | Long-range screening and quasiparticle energies | Weak short-range correlation and total energies |
+
+Continue with [Quasiparticles](/docs/notes/quasiparticle/) for the pole interpretation of $G$, or compare the equations directly with [GF2](/docs/greens_function/gf2/).
+
 
 
 
@@ -94,5 +139,3 @@ Green also provides an implementation of the GW approximation using the exact tw
 [^Bloch]: C. Yeh, S. Iskakov, D. Zgid, and E. Gull, [Phys. Rev. B 106, 235104](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.106.235104)
 
 [^rel]: C. Yeh, A. Shee, Q. Sun, E. Gull, and D. Zgid, [Phys. Rev. B 106, 085121](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.106.085121)
-
-
