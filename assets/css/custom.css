@@ -557,7 +557,7 @@ html[class~="dark"] {
 
 .learning-path {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   margin: 0;
   padding: 0;
   border-top: 1px solid var(--line);
@@ -675,6 +675,7 @@ html[class~="dark"] {
   margin: 1.8rem 0 2.5rem;
 }
 .collection-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.collection-card-grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .collection-card-grid--single { grid-template-columns: minmax(0, 1fr); }
 .note-concept-grid article,
 .collection-card {

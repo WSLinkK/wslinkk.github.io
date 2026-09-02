@@ -28,10 +28,11 @@ where each $G_k(i_k)$ is a small matrix and the connecting dimensions are the TT
 </div>
 {{< /raw >}}
 
-## Entry-sampling methods
+## Methods in this notebook
 
 {{< raw >}}
-<div class="collection-card-grid collection-card-grid--single">
+<div class="collection-card-grid">
+  <a class="collection-card" href="/docs/tensor/tensor_hypercontraction/"><span class="collection-card__tag">Electronic structure</span><h3>Tensor hypercontraction</h3><p>Factorize Coulomb tensors into orbital collocation matrices and an interaction kernel.</p><span class="text-link">Read the note →</span></a>
   <a class="collection-card" href="/docs/tensor/tensor_train_cross_interpolation/"><span class="collection-card__tag">Adaptive compression</span><h3>Tensor-train cross interpolation</h3><p>Construct a low-rank approximation using selected tensor entries instead of materializing the full array.</p><span class="text-link">Read the note →</span></a>
 </div>
 {{< /raw >}}

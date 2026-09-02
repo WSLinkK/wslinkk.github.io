@@ -24,9 +24,9 @@ For spatial orbitals $\phi_p(\mathbf r)$, chemists' notation is
 $$
 (pq|rs)=
 \iint
-\phi_p^*(\mathbf r_1)\phi_q(\mathbf r_1)
+\phi_p^{\ast}(\mathbf r_1)\phi_q(\mathbf r_1)
 \frac{1}{|\mathbf r_1-\mathbf r_2|}
-\phi_r^*(\mathbf r_2)\phi_s(\mathbf r_2)
+\phi_r^{\ast}(\mathbf r_2)\phi_s(\mathbf r_2)
 \,d\mathbf r_1d\mathbf r_2.
 $$
 
@@ -42,7 +42,7 @@ For spin orbitals $\psi_p(x)=\psi_p(\mathbf r,\sigma)$, the spin integrations ar
 
 $$
 \langle pr|qs\rangle=
-\iint \psi_p^*(x_1)\psi_r^*(x_2)
+\iint \psi_p^{\ast}(x_1)\psi_r^{\ast}(x_2)
 \frac{1}{r_{12}}
 \psi_q(x_1)\psi_s(x_2)\,dx_1dx_2.
 $$
@@ -59,7 +59,7 @@ $$
 With complex orbitals, exchanges within a pair introduce complex conjugation; for example,
 
 $$
-(pq|rs)^*=(qp|sr),
+(pq|rs)^{\ast}=(qp|sr),
 \qquad
 (pq|rs)=(rs|pq).
 $$
@@ -117,4 +117,4 @@ This replaces one four-index object with two three-index factors. Storage common
 
 Cholesky decomposition generates similar three-index factors adaptively from the ERI matrix. Tensor hypercontraction factorizes the orbital-pair dependence further, often into products evaluated on interpolation points. Local and sparse representations exploit the spatial decay of orbital products. Each approach trades memory, arithmetic, accuracy control, and implementation complexity differently.
 
-For Green's-function methods, these factorizations are especially valuable because the interaction appears repeatedly in self-energy, polarization, and screened-interaction contractions across time, frequency, momentum, and spin indices.
+For Green's-function methods, these factorizations are especially valuable because the interaction appears repeatedly in self-energy, polarization, and screened-interaction contractions across time, frequency, momentum, and spin indices. Continue with [Tensor hypercontraction](/docs/tensor/tensor_hypercontraction/) for the separable representation used in fully self-consistent $GW$ and vertex-corrected calculations.

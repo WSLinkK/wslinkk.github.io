@@ -127,7 +127,7 @@ The approximation omits the vertex $\Gamma$ by setting it to its lowest-order va
 | Second-order exchange | Absent in standard GW | Included |
 | Typical strength | Long-range screening and quasiparticle energies | Weak short-range correlation and total energies |
 
-Continue with [Quasiparticles](/docs/notes/quasiparticle/) for the pole interpretation of $G$, or compare the equations directly with [GF2](/docs/greens_function/gf2/).
+Continue with [Self-consistent vertex corrections](/docs/greens_function/vertex_corrections/) to see how exchange diagrams extend the $GW$ self-energy, [Quasiparticles](/docs/notes/quasiparticle/) for the pole interpretation of $G$, or [GF2](/docs/greens_function/gf2/) for a bare-interaction comparison.
 
 
 

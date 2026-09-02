@@ -33,12 +33,13 @@ The self-energy $\Sigma$ is the effective, energy-dependent potential that conta
 </div>
 {{< /raw >}}
 
-## Two approximations in this notebook
+## Approximations and extensions in this notebook
 
 {{< raw >}}
-<div class="collection-card-grid">
+<div class="collection-card-grid collection-card-grid--three">
   <a class="collection-card" href="/docs/greens_function/gf2/"><span class="collection-card__tag">Second order</span><h3>GF2 approximation</h3><p>Direct and exchange diagrams through second order in the bare interaction.</p><span class="text-link">Read the note →</span></a>
   <a class="collection-card" href="/docs/greens_function/gw/"><span class="collection-card__tag">Screening</span><h3>GW approximation</h3><p>A dynamically screened interaction summed through the polarization.</p><span class="text-link">Read the note →</span></a>
+  <a class="collection-card" href="/docs/greens_function/vertex_corrections/"><span class="collection-card__tag">Beyond GW</span><h3>Vertex corrections</h3><p>Self-consistent SOX, SOSEX, 2SOSEX, and G3W2 corrections to the self-energy.</p><span class="text-link">Read the note →</span></a>
 </div>
 {{< /raw >}}
 
@@ -50,4 +51,4 @@ The self-energy $\Sigma$ is the effective, energy-dependent potential that conta
 4. Update the density and chemical potential, then repeat until all target quantities converge.
 5. Continue $G$ or $\Sigma$ from the imaginary axis when real-frequency spectra are required.
 
-The same loop can behave very differently under GF2 and GW because their diagrammatic content, screening, and failure modes differ. The notes below focus on those distinctions.
+The same loop can behave very differently under GF2, GW, and vertex-corrected GW because their diagrammatic content, screening, and failure modes differ. The notes below focus on those distinctions.

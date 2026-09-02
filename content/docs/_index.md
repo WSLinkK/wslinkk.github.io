@@ -20,7 +20,7 @@ layout: home
     </div>
     <dl class="notes-stats" aria-label="Notebook summary">
       <div><dt>4</dt><dd>connected subjects</dd></div>
-      <div><dt>6</dt><dd>focused notes</dd></div>
+      <div><dt>8</dt><dd>focused notes</dd></div>
       <div><dt>∞</dt><dd>room to refine</dd></div>
     </dl>
   </section>
@@ -34,7 +34,7 @@ layout: home
     <div class="notes-topic-grid">
       <a class="notes-topic-card notes-topic-card--blue" href="/docs/greens_function/">
         <span class="notes-topic-card__symbol">G</span>
-        <div><span class="notes-topic-card__count">2 focused notes</span><h3>Green’s functions</h3><p>Dyson’s equation, self-energies, GF2, GW, and screened interactions.</p><span class="text-link">Explore the collection →</span></div>
+        <div><span class="notes-topic-card__count">3 focused notes</span><h3>Green’s functions</h3><p>Dyson’s equation, GF2, GW, screened interactions, and self-consistent vertex corrections.</p><span class="text-link">Explore the collection →</span></div>
       </a>
       <a class="notes-topic-card notes-topic-card--gold" href="/docs/solid_state_physics/">
         <span class="notes-topic-card__symbol">k</span>
@@ -42,7 +42,7 @@ layout: home
       </a>
       <a class="notes-topic-card notes-topic-card--violet" href="/docs/tensor/">
         <span class="notes-topic-card__symbol">T</span>
-        <div><span class="notes-topic-card__count">1 focused note</span><h3>Tensor methods</h3><p>Low-rank representations and cross interpolation for high-dimensional problems.</p><span class="text-link">Explore the collection →</span></div>
+        <div><span class="notes-topic-card__count">2 focused notes</span><h3>Tensor methods</h3><p>Tensor hypercontraction and cross interpolation for high-dimensional many-body problems.</p><span class="text-link">Explore the collection →</span></div>
       </a>
       <a class="notes-topic-card notes-topic-card--green" href="/docs/notes/">
         <span class="notes-topic-card__symbol">∫</span>
@@ -62,7 +62,9 @@ layout: home
       <li><span>02</span><div><p class="learning-path__type">Many-body language</p><h3><a href="/docs/notes/quasiparticle/">Quasiparticles</a></h3><p>Poles, lifetimes, spectral weight, and the self-energy.</p></div></li>
       <li><span>03</span><div><p class="learning-path__type">Interaction</p><h3><a href="/docs/notes/integral/">Two-electron integrals</a></h3><p>The four-index object behind electronic correlation.</p></div></li>
       <li><span>04</span><div><p class="learning-path__type">Approximation</p><h3><a href="/docs/greens_function/gw/">GW and GF2</a></h3><p>Two conserving views of the electronic self-energy.</p></div></li>
-      <li><span>05</span><div><p class="learning-path__type">Compression</p><h3><a href="/docs/tensor/tensor_train_cross_interpolation/">TT cross interpolation</a></h3><p>Query only the tensor entries that carry the structure.</p></div></li>
+      <li><span>05</span><div><p class="learning-path__type">Beyond GW</p><h3><a href="/docs/greens_function/vertex_corrections/">Vertex corrections</a></h3><p>Where Γ enters and what screened exchange changes.</p></div></li>
+      <li><span>06</span><div><p class="learning-path__type">Factorization</p><h3><a href="/docs/tensor/tensor_hypercontraction/">Tensor hypercontraction</a></h3><p>Compress the Coulomb tensor without hiding the approximation.</p></div></li>
+      <li><span>07</span><div><p class="learning-path__type">Adaptive sampling</p><h3><a href="/docs/tensor/tensor_train_cross_interpolation/">TT cross interpolation</a></h3><p>Query only the tensor entries that carry the structure.</p></div></li>
     </ol>
   </section>
 

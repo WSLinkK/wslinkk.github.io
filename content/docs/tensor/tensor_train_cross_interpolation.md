@@ -2,7 +2,7 @@
 title: Tensor-Train Cross Interpolation
 linkTitle: TT Cross Interpolation
 description: Building tensor-train approximations from adaptively selected entries rather than the full dense tensor.
-weight: 1
+weight: 2
 math: true
 katex: true
 ---
