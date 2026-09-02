@@ -1,8 +1,6 @@
 # Configuration
 baseURL: 'https://munkhw.com/'
-title: "Munkhorgil Wang's Personal Blog"
-theame: hextra
-
+title: "Munkhorgil Wang"
 enableRobotsTXT: true
 enableGitInfo: true
 enableEmoji: true
@@ -32,14 +30,14 @@ markup:
     noClasses: false
 
 params:
-  description: "Munkhorgil Wang's Personal Blog"
-  headTitle: "Munkhorgil Wang's Personal Blog"
+  description: "Munkhorgil Wang is a theoretical chemistry and scientific computing researcher developing Green's-function methods for molecules and solids."
+  headTitle: "Munkhorgil Wang · Theoretical Chemistry & Scientific Computing"
   theme:
     # light | dark | system
     default: system
     displayToggle: true
   page:
-    width: normal
+    width: wide
   editURL:
     enable: true
     base: "https://github.com/WSLinkK/wslinkk.github.io/edit/main/content"
@@ -54,6 +52,14 @@ params:
 
 menu:
   main:
+    - identifier: research
+      name: Research
+      url: "/about/#research"
+      weight: 2
+    - identifier: notes
+      name: Notes
+      pageRef: /docs
+      weight: 3
     - identifier: about
       name: About
       pageRef: /about
