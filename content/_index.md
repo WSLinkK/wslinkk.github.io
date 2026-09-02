@@ -27,7 +27,9 @@ toc: false
     <div class="research-orbit__ring research-orbit__ring--one"></div>
     <div class="research-orbit__ring research-orbit__ring--two"></div>
     <div class="research-orbit__ring research-orbit__ring--three"></div>
-    <div class="research-orbit__core">G</div>
+    <div class="research-orbit__core-track">
+      <div class="research-orbit__core">G</div>
+    </div>
     <span class="research-orbit__label research-orbit__label--gw">GW</span>
     <span class="research-orbit__label research-orbit__label--thc">THC</span>
     <span class="research-orbit__label research-orbit__label--sigma">Σ</span>

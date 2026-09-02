@@ -9,6 +9,7 @@
   --accent: #2463eb;
   --accent-soft: #eaf1ff;
   --warm: #f1a83b;
+  --orbital-font: Georgia, "Times New Roman", serif;
   --hextra-max-content-width: 76rem;
 }
 
@@ -157,6 +158,12 @@ html[class~="dark"] {
 .research-orbit__ring--one { transform: rotate(20deg) scaleY(0.43); }
 .research-orbit__ring--two { transform: rotate(140deg) scaleY(0.43); }
 .research-orbit__ring--three { transform: rotate(260deg) scaleY(0.43); }
+.research-orbit__core-track {
+  position: absolute;
+  inset: 0;
+  animation: core-orbit 14s linear infinite;
+  will-change: transform;
+}
 .research-orbit__core {
   position: absolute;
   top: 50%;
@@ -164,16 +171,19 @@ html[class~="dark"] {
   display: grid;
   width: 6rem;
   height: 6rem;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) translateX(2.6rem);
   place-items: center;
   border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line));
   border-radius: 1.7rem;
   background: color-mix(in srgb, var(--surface) 80%, transparent);
   box-shadow: 0 20px 60px rgba(16, 34, 67, 0.16);
   color: var(--ink);
-  font-family: Georgia, serif;
+  font-family: var(--orbital-font);
   font-size: 3rem;
   font-style: italic;
+  font-weight: 400;
+  animation: core-counter-orbit 14s linear infinite;
+  will-change: transform;
 }
 .research-orbit__label {
   position: absolute;
@@ -181,14 +191,23 @@ html[class~="dark"] {
   border: 1px solid var(--line);
   border-radius: 0.45rem;
   background: color-mix(in srgb, var(--surface) 86%, transparent);
-  color: var(--muted);
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 0.72rem;
-  font-weight: 700;
+  color: var(--ink);
+  font-family: var(--orbital-font);
+  font-size: 0.88rem;
+  font-style: italic;
+  font-weight: 400;
 }
 .research-orbit__label--gw { top: 11%; right: 17%; }
 .research-orbit__label--thc { right: 4%; bottom: 25%; }
 .research-orbit__label--sigma { bottom: 10%; left: 23%; }
+
+@keyframes core-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes core-counter-orbit {
+  to { transform: translate(-50%, -50%) translateX(2.6rem) rotate(-360deg); }
+}
 
 .home-section, .about-section {
   padding: clamp(4rem, 8vw, 7rem) 0;
@@ -370,4 +389,7 @@ html[class~="dark"] {
 
 @media (prefers-reduced-motion: reduce) {
   .button { transition: none; }
+  .research-orbit__core-track,
+  .research-orbit__core { animation: none; }
+  .research-orbit__core { transform: translate(-50%, -50%); }
 }
