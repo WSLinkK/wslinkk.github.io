@@ -96,8 +96,8 @@ toc: false
         <circle class="research-orbit__nucleus-highlight" cx="190" cy="183" r="4" />
       </g>
     </svg>
-    <span class="research-orbit__label research-orbit__label--gg">GG</span>
-    <span class="research-orbit__label research-orbit__label--gw">GW</span>
+    <span class="research-orbit__label research-orbit__label--gg">G</span>
+    <span class="research-orbit__label research-orbit__label--gw">GW</span>s
     <span class="research-orbit__label research-orbit__label--thc">THC</span>
     <span class="research-orbit__label research-orbit__label--sigma">Σ</span>
   </div>

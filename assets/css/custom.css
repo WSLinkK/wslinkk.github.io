@@ -28,6 +28,21 @@ html[class~="dark"] {
 .content h1, .content h2, .content h3 { color: var(--ink); letter-spacing: -0.035em; }
 .content a { text-decoration: none; }
 
+.navbar-theme-toggle {
+  display: flex;
+  align-items: center;
+}
+.navbar-theme-toggle .theme-toggle {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  place-items: center;
+  border-radius: 0.5rem;
+}
+.navbar-theme-toggle .theme-toggle > div { gap: 0; }
+.navbar-theme-toggle .theme-toggle svg { width: 1.5rem; height: 1.5rem; }
+
 .home-hero, .home-section, .about-hero, .about-layout, .about-section {
   width: min(100%, 76rem);
   margin-right: auto;
