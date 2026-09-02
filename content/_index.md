@@ -5,6 +5,7 @@ layout: hextra-home
 toc: false
 ---
 
+{{< raw >}}
 <section class="home-hero" aria-labelledby="intro-heading">
   <div class="home-hero__copy">
     <p class="eyebrow">Theoretical chemistry · Scientific computing</p>
@@ -98,3 +99,4 @@ toc: false
   </div>
   <a class="button button--primary" href="/docs/">Browse the notes <span aria-hidden="true">→</span></a>
 </section>
+{{< /raw >}}

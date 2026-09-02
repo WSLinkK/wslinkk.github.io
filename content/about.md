@@ -1,10 +1,11 @@
 ---
 title: About
 description: About Munkhorgil Wang — theoretical chemist and scientific computing researcher at the University of Michigan.
-layout: hextra-home
+layout: home
 toc: false
 ---
 
+{{< raw >}}
 <header class="about-hero">
   <p class="eyebrow">About</p>
   <h1>I use computation to ask better questions about quantum matter.</h1>
@@ -39,10 +40,10 @@ toc: false
     <p>I am a Ph.D. candidate in theoretical and computational chemistry at the University of Michigan. My research centers on finite-temperature Green’s-function methods for molecules and solids, with a particular interest in fully self-consistent GW and vertex-corrected approaches.</p>
     <p>The physics is only half the challenge. I also care about the algorithms and software that make these methods usable: efficient tensor representations, thoughtful approximations, reproducible implementations, and clear numerical validation.</p>
 
-    <h2>Teaching and communication</h2>
+    <h2 id="teaching">Teaching and communication</h2>
     <p>I have taught chemistry as a graduate student instructor and presented my work at meetings including the Midwest Theoretical Chemistry Conference and the Telluride School on Theoretical Chemistry. This site is an extension of that work—a place to turn technical ideas into useful explanations.</p>
 
-    <h2>Beyond the calculation</h2>
+    <h2 id="beyond-research">Beyond the calculation</h2>
     <p>I grew up across languages and cultures and work in Mongolian, Chinese, and English, with elementary Japanese. Long before graduate school, I helped lead the student team behind a 1,167.44 m² Guinness World Record origami mosaic in Ulaanbaatar—an early lesson in what careful planning and collective effort can build.</p>
   </div>
 </div>
@@ -109,3 +110,4 @@ toc: false
     <a class="button button--secondary" href="https://github.com/WSLinkK">GitHub <span aria-hidden="true">↗</span></a>
   </div>
 </section>
+{{< /raw >}}
